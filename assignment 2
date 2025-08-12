@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ForgeFund – Enhanced Contact & Media Showcase</title>
+  <meta name="description" content="Explore ForgeFund’s services, media, and reach out through our accessible HTML5 form.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <!-- Skip-link -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <header>
+    <h1>ForgeFund</h1>
+    <p>Impact-Driven Financial Solutions</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#contact-form">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Services Section (lists) -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">How We Help</h2>
+      <ul>
+        <li>High-growth portfolio advisory</li>
+        <li>Impact-focused asset management</li>
+        <li>End-to-end fintech integrations</li>
+      </ul>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" aria-labelledby="media-heading">
+      <h2 id="media-heading">See & Hear Our Impact</h2>
+
+      <!-- Video -->
+      <figure>
+        <video controls width="640" height="360" poster="poster-impact.jpg">
+          <source src="impact-story.mp4" type="video/mp4">
+          <track kind="captions" src="impact-captions.vtt" srclang="en" label="English">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Two-minute overview of our latest impact initiative.</figcaption>
+      </figure>
+
+      <!-- Audio -->
+      <figure>
+        <figcaption>Podcast: The Future of Impact Investing (3 min)</figcaption>
+        <audio controls>
+          <source src="podcast-impact.mp3" type="audio/mpeg">
+          <track kind="captions" src="podcast-captions.vtt" srclang="en">
+          Your browser does not support the audio element.
+        </audio>
+      </figure>
+    </section>
+
+    <!-- Rates Section (table) -->
+    <section id="rates" aria-labelledby="rates-heading">
+      <h2 id="rates-heading">Advisory Rates</h2>
+      <table>
+        <caption>Transparent pricing for our core advisory tiers</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tier</th>
+            <th scope="col">Minimum Assets</th>
+            <th scope="col">Annual Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Starter</th>
+            <td>$100,000</td>
+            <td>1.25 %</td>
+          </tr>
+          <tr>
+            <th scope="row">Growth</th>
+            <td>$1,000,000</td>
+            <td>0.95 %</td>
+          </tr>
+          <tr>
+            <th scope="row">Enterprise</th>
+            <td>$10,000,000</td>
+            <td>0.65 %</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get In Touch</h2>
+
+      <form action="https://forgefund.com/submit" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fname">First name *</label>
+          <input type="text" id="fname" name="firstName" required minlength="2" maxlength="50"
+                 autocomplete="given-name" placeholder="Jane">
+
+          <label for="lname">Last name *</label>
+          <input type="text" id="lname" name="lastName" required minlength="2" maxlength="50"
+                 autocomplete="family-name" placeholder="Doe">
+
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email"
+                 placeholder="jane.doe@example.com">
+
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" pattern="^\+?[0-9\s\-]{7,15}$"
+                 placeholder="+1 555-123-4567">
+        </fieldset>
+
+        <fieldset>
+          <legend>Investment Profile</legend>
+
+          <label for="tier">Preferred advisory tier *</label>
+          <select id="tier" name="tier" required>
+            <option value="" disabled selected>Select a tier</option>
+            <option value="starter">Starter</option>
+            <option value="growth">Growth</option>
+            <option value="enterprise">Enterprise</option>
+          </select>
+
+          <label for="investment">Anticipated initial investment ($) *</label>
+          <input type="number" id="investment" name="investment" required min="100000" step="1000"
+                 placeholder="250000">
+
+          <label for="goals">Investment goals (brief)</label>
+          <textarea id="goals" name="goals" rows="3" maxlength="500"
+                    placeholder="e.g., long-term growth with ESG focus"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Communication Preferences</legend>
+
+          <ul>
+            <li>
+              <input type="checkbox" id="newsletter" name="newsletter">
+              <label for="newsletter">Receive our monthly newsletter</label>
+            </li>
+            <li>
+              <input type="checkbox" id="phone-consent" name="phoneConsent">
+              <label for="phone-consent">Allow phone contact</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <time datetime="2025">2025</time> ForgeFund. All rights reserved.</p>
+  </footer>
+</body>
+</html>
